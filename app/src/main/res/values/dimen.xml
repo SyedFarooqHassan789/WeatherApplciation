@@ -3,6 +3,8 @@
     <dimen name="iv_weather_condition_height">200dp</dimen>
     <dimen name="iv_weather_condition_width">200dp</dimen>
 
+    <dimen name="layout_elevation">1dp</dimen>
+
     <dimen name="margin_default">11dp</dimen>
     <dimen name="margin_normal">22dp</dimen>
     <dimen name="margin_large">33dp</dimen>
