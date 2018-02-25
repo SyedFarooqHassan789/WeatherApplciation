@@ -1,9 +1,7 @@
 package eficode.fi.weatherapp.svg;
 
 
-import android.annotation.TargetApi;
 import android.graphics.drawable.PictureDrawable;
-import android.os.Build;
 import android.widget.ImageView;
 
 import com.bumptech.glide.load.DataSource;

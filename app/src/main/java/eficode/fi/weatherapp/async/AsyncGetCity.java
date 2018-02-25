@@ -2,8 +2,6 @@ package eficode.fi.weatherapp.async;
 
 import android.os.AsyncTask;
 
-import java.util.List;
-
 import eficode.fi.weatherapp.WeatherApplication;
 import eficode.fi.weatherapp.entity.LocationInfo;
 import eficode.fi.weatherapp.interfaces.IResponseHelper;

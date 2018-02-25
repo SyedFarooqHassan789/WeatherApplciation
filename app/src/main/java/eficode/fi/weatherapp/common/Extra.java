@@ -11,4 +11,7 @@ public abstract class Extra {
     public static final String LOCATION_INFO_LIST = "LOCATION_INFO_LIST";
     public static final String LOCATION_INFO_SELECTED_INDEX = "LOCATION_INFO_SELECTED_INDEX";
     public static final String LOCATION_INFO = "LOCATION_INFO";
+    public static final String DATA_DELETED = "DATA_DELETED";
+    public static final String DATA_SAVED = "DATA_SAVED";
+    public static final String LOCATION_DB = "LocationDb";
 }

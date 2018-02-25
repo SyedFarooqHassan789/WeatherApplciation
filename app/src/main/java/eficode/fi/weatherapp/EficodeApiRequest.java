@@ -1,7 +1,6 @@
 package eficode.fi.weatherapp;
 
 
-import android.location.Location;
 import android.util.Log;
 
 import eficode.fi.weatherapp.data.GetForecast;

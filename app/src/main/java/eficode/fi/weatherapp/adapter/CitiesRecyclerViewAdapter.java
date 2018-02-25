@@ -16,13 +16,10 @@ import eficode.fi.weatherapp.interfaces.IOnItemClickListener;
 import eficode.fi.weatherapp.recyclerview.CitiesRecyclerViewHolder;
 
 public class CitiesRecyclerViewAdapter extends RecyclerView.Adapter<CitiesRecyclerViewHolder> {
-    private Context context;
     private List<LocationInfo> locationInfoList;
     private IOnItemClickListener iOnItemClickListener;
 
-    public CitiesRecyclerViewAdapter(final Context context, final IOnItemClickListener iOnItemClickListener) {
-        this.context = context;
-
+    public CitiesRecyclerViewAdapter(final IOnItemClickListener iOnItemClickListener) {
         this.locationInfoList = new ArrayList<>();
         this.iOnItemClickListener = iOnItemClickListener;
     }

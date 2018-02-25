@@ -3,17 +3,15 @@ package eficode.fi.weatherapp.async;
 
 import android.os.AsyncTask;
 
-import java.util.List;
-
 import eficode.fi.weatherapp.WeatherApplication;
-import eficode.fi.weatherapp.entity.LocationInfo;
+import eficode.fi.weatherapp.common.Extra;
 
 public class AsyncDeleteCity extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String id = params[0];
         WeatherApplication.getInstance().getAppDatabase().iLocationDao().deleteId(id);
-        return "data deleted";
+        return Extra.DATA_DELETED;
     }
 
     @Override
