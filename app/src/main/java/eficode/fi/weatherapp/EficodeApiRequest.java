@@ -10,6 +10,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EficodeApiRequest {
+    //Getting the response from Efficode Api and placing the result in callback interface
     public static void getForecast(final double latitude, final double longitude, final IResponseHelper iResponseHelper) {
         WeatherApplication.getInstance().getApiWeatherService().getForecast(latitude, longitude).enqueue(new Callback<GetForecast>() {
             @Override

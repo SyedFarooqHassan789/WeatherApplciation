@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import eficode.fi.weatherapp.EficodeApiRequest;
 import eficode.fi.weatherapp.GpsChecker;
@@ -64,7 +65,7 @@ public class LocationFragment extends Fragment implements ILocationHelper {
             locationListener = new LocationListener(this);
 
             gpsChecker = new GpsChecker(getActivity());
-
+            //Checking permission
             askForPermission(Manifest.permission.ACCESS_FINE_LOCATION, Extra.LOCATION);
         }
     }
@@ -93,13 +94,15 @@ public class LocationFragment extends Fragment implements ILocationHelper {
             }
         }
     }
-
+    //Get current location by using location manager and location listener
     public void getLocation() {
         try {
             boolean isGpsOn = gpsChecker.CheckStatus();
             if (isGpsOn) {
                 locationManager.requestLocationUpdates(LocationManager
                         .GPS_PROVIDER, Extra.MIN_TIME, Extra.MIN_DISTANCE, locationListener); //set after how much distance and time you will get location
+            } else {
+                Toast.makeText(getContext(), getString(R.string.gps_is_not_on), Toast.LENGTH_LONG).show();
             }
         } catch (SecurityException e) {
             e.printStackTrace();
@@ -131,6 +134,7 @@ public class LocationFragment extends Fragment implements ILocationHelper {
         }
     }
 
+    //Getting response from efficode api and setting image and text from Api
     @Override
     public void onLocationChanged(final double latitude, final double longitude) {
         EficodeApiRequest.getForecast(latitude, longitude, new IResponseHelper() {
@@ -148,6 +152,7 @@ public class LocationFragment extends Fragment implements ILocationHelper {
         });
     }
 
+    //Deattach the location manager
     @Override
     public void onDestroy() {
         if (locationManager != null && locationListener != null) {

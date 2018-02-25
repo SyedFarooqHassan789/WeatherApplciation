@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
     }
 
     private void initializeData() {
-        recyclerViewAdapter = new CitiesRecyclerViewAdapter(this, this);
+        recyclerViewAdapter = new CitiesRecyclerViewAdapter(this);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
         currentLocationInfo.setLocationName(getString(R.string.current_location));
 
         recyclerViewAdapter.add(currentLocationInfo);
-
+        //Get all cities from database
         AsyncGetAllCities asyncGetDbData = new AsyncGetAllCities(new IResponseHelper() {
             @Override
             public void getData(Object object) {
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
         });
         asyncGetDbData.execute();
     }
-
+    //Handle click events on recycler view items
     @Override
     public void onItemClick(View view, final Object object) {
         switch (view.getId()) {
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
         recyclerView = findViewById(R.id.rv_cities);
     }
 
-
+    //Google API function to get data of selected place int he list
     @Override
     public void onPlaceSelected(final Place place) {
         new AsyncGetCity(new IResponseHelper() {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
     public void onError(Status status) {
         // TODO: Handle the error.
     }
-
+    //Show dialog if city is already present in list
     public void createDialog() {
         new AlertDialog.Builder(this).setTitle(R.string.already_present).setMessage(R.string.clicked_city_is_already_present_in_added_cities).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override

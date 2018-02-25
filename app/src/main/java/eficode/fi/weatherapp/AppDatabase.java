@@ -6,6 +6,7 @@ import android.arch.persistence.room.RoomDatabase;
 import eficode.fi.weatherapp.entity.LocationInfo;
 import eficode.fi.weatherapp.interfaces.ILocationDao;
 
+//setting up database
 @Database(entities = {LocationInfo.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ILocationDao iLocationDao();

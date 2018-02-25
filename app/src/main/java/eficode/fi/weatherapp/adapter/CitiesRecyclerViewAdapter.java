@@ -1,6 +1,5 @@
 package eficode.fi.weatherapp.adapter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -66,16 +65,19 @@ public class CitiesRecyclerViewAdapter extends RecyclerView.Adapter<CitiesRecycl
         return recyclerViewHolder;
     }
 
+    //Adding item in the recycler view for cites
     public void add(final LocationInfo locationInfo) {
         locationInfoList.add(locationInfo);
         notifyDataSetChanged();
     }
 
+    //Adding all item in the recycler view for cites
     public void addAll(final List<LocationInfo> locationInfoList) {
         this.locationInfoList.addAll(locationInfoList);
         notifyDataSetChanged();
     }
 
+    //Removing  item from recycler view for cites
     public void remove(final LocationInfo locationInfo) {
         locationInfoList.remove(locationInfo);
         notifyDataSetChanged();

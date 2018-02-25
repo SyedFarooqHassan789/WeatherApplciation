@@ -12,7 +12,7 @@ public class LocationListener implements android.location.LocationListener {
     public LocationListener(final ILocationHelper iLocationHelper) {
         this.iLocationHelper = iLocationHelper;
     }
-
+    //Responsible for getting current location and in callback interface
     @Override
     public void onLocationChanged(@NonNull Location location) {
         iLocationHelper.onLocationChanged(location.getLatitude(), location.getLongitude());

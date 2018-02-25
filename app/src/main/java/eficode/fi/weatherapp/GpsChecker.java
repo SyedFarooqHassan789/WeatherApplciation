@@ -19,16 +19,15 @@ public class GpsChecker {
     public GpsChecker(@NonNull Context context) {
         this.context = context;
     }
-
+    //Check Gps is turned on or not
     @CheckResult
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     public boolean CheckStatus() {
         ContentResolver contentResolver = context.getContentResolver();
         checkPermission(context);
-        boolean gpsStatus = Settings.Secure
+        return Settings.Secure
                 .isLocationProviderEnabled(contentResolver,
                         LocationManager.GPS_PROVIDER);
-        return gpsStatus;
     }
 
     private void checkPermission(@NonNull Context context) {

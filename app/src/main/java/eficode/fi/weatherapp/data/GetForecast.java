@@ -1,7 +1,5 @@
 package eficode.fi.weatherapp.data;
 
-import android.os.Parcelable;
-
 import java.io.Serializable;
 
 public class GetForecast implements Serializable {

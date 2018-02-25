@@ -37,6 +37,7 @@ public class WeatherViewerActivity extends AppCompatActivity {
 
     private void initializeData() {
         final List<LocationInfo> locationInfoList = (ArrayList<LocationInfo>) getIntent().getSerializableExtra(Extra.LOCATION_INFO_LIST);
+        //setting the adapter for fragment
         final LocationFragmentPagerAdapter locationFragmentPagerAdapter = new LocationFragmentPagerAdapter(getSupportFragmentManager());
         locationFragmentPagerAdapter.addAll(locationInfoList);
 
