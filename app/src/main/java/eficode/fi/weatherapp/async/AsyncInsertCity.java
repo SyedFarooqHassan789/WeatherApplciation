@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import eficode.fi.weatherapp.WeatherApplication;
 import eficode.fi.weatherapp.entity.LocationInfo;
 
-public class AsyncInsertDbData extends AsyncTask<LocationInfo, Void, String> {
+public class AsyncInsertCity extends AsyncTask<LocationInfo, Void, String> {
     @Override
     protected String doInBackground(LocationInfo... locationInfo) {
         WeatherApplication.getInstance().getAppDatabase().iLocationDao().insertAll(locationInfo);

@@ -9,10 +9,10 @@ import eficode.fi.weatherapp.entity.LocationInfo;
 import eficode.fi.weatherapp.interfaces.IResponseHelper;
 
 
-public class AsyncCheckDbId extends AsyncTask<String, Void, LocationInfo> {
+public class AsyncGetCity extends AsyncTask<String, Void, LocationInfo> {
     IResponseHelper iResponseHelper;
 
-    public AsyncCheckDbId(IResponseHelper iResponseHelper) {
+    public AsyncGetCity(IResponseHelper iResponseHelper) {
         this.iResponseHelper = iResponseHelper;
     }
 

@@ -1,7 +1,6 @@
 package eficode.fi.weatherapp.adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,9 +13,9 @@ import java.util.List;
 import eficode.fi.weatherapp.R;
 import eficode.fi.weatherapp.entity.LocationInfo;
 import eficode.fi.weatherapp.interfaces.IOnItemClickListener;
-import eficode.fi.weatherapp.recyclerview.RecyclerViewHolder;
+import eficode.fi.weatherapp.recyclerview.CitiesRecyclerViewHolder;
 
-public class CitiesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
+public class CitiesRecyclerViewAdapter extends RecyclerView.Adapter<CitiesRecyclerViewHolder> {
     private Context context;
     private List<LocationInfo> locationInfoList;
     private IOnItemClickListener iOnItemClickListener;
@@ -34,7 +33,7 @@ public class CitiesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull CitiesRecyclerViewHolder holder, final int position) {
         final LocationInfo locationInfo = locationInfoList.get(position);
         if (locationInfo.getLocationId() == null) {
             holder.ibDeleteCities.setVisibility(View.INVISIBLE);
@@ -46,12 +45,12 @@ public class CitiesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 
     /*Creates the view for recycler view*/
     @Override
-    public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+    public CitiesRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
         ViewGroup mViewGroup = (ViewGroup) layoutInflater.inflate(
                 R.layout.cities_recyclerview_item, viewGroup, false);
 
-        final RecyclerViewHolder recyclerViewHolder = new RecyclerViewHolder(mViewGroup, iOnItemClickListener);
+        final CitiesRecyclerViewHolder recyclerViewHolder = new CitiesRecyclerViewHolder(mViewGroup, iOnItemClickListener);
 
         recyclerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

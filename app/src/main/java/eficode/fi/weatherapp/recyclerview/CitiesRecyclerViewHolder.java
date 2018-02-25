@@ -9,11 +9,11 @@ import android.widget.TextView;
 import eficode.fi.weatherapp.R;
 import eficode.fi.weatherapp.interfaces.IOnItemClickListener;
 
-public class RecyclerViewHolder extends RecyclerView.ViewHolder {
+public class CitiesRecyclerViewHolder extends RecyclerView.ViewHolder {
     public TextView tvCityName;
     public ImageButton ibDeleteCities;
 
-    public RecyclerViewHolder(@NonNull View view, final IOnItemClickListener iOnItemClickListener) {
+    public CitiesRecyclerViewHolder(@NonNull View view, final IOnItemClickListener iOnItemClickListener) {
         super(view);
         tvCityName = view.findViewById(R.id.tv_city_name);
         ibDeleteCities = view.findViewById(R.id.ib_delete_cities);
