@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="iv_weather_condition_height">200dp</dimen>
+    <dimen name="iv_weather_condition_width">200dp</dimen>
+
+    <dimen name="margin_default">11dp</dimen>
+    <dimen name="margin_normal">22dp</dimen>
+    <dimen name="margin_large">33dp</dimen>
+
+    <dimen name="padding_default">15dp</dimen>
+    <dimen name="padding_normal">25dp</dimen>
+    <dimen name="padding_large">35dp</dimen>
+    
+    <dimen name="cities_list_Item_layout_height">48dp</dimen>
+
+    <dimen name="divider_height">26dp</dimen>
+
+    <dimen name="city_list_tv_size">15sp</dimen>
+
+    <dimen name="floating_button_margin">16dp</dimen>
+</resources>
